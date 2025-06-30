@@ -1,0 +1,67 @@
+2025-06-30 17:21:32,208 - src.api.conftest - INFO -  ==> STARTING TEST: 'test_create_group_using_different_data[12121212]'
+2025-06-30 17:21:32,210 - src.api.groups.test_groups - INFO - Creating a group
+2025-06-30 17:21:32,540 - helper.rest_client - DEBUG - Response Body: {'id': '1d7f5b88-fff5-420b-8119-beb49663a322', 'team_id': '9013440493', 'userid': 43009368, 'name': '12121212', 'handle': '12121212', 'date_created': '1751318492383', 'metadata': None, 'description': '{"ops":[{"insert":"\\n","attributes":{"block-id":"block-32c31530-8349-40ba-86ac-00847e598a22"}}]}', 'bookmarks': None, 'description_visibility': None, 'bookmarks_visibility': None, 'initials': '1', 'members': [], 'avatar': {'attachment_id': None, 'color': None, 'source': None, 'icon': None}, 'locations': {'categories': [], 'projects': [], 'subcategories': []}, 'description_size': 'none'}
+2025-06-30 17:21:32,541 - helper.rest_client - DEBUG - Response Status Code: 200
+2025-06-30 17:21:32,541 - helper.rest_client - DEBUG - ----------Response Headers: {
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "560",
+    "Connection": "keep-alive",
+    "Date": "Mon, 30 Jun 2025 21:21:32 GMT",
+    "x-received-from": "shard-prod-us-east-2-1",
+    "Server": "nginx",
+    "x-dns-prefetch-control": "off",
+    "expect-ct": "max-age=0",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "x-download-options": "noopen",
+    "x-content-type-options": "nosniff",
+    "x-permitted-cross-domain-policies": "none",
+    "x-xss-protection": "0",
+    "vary": "Origin",
+    "access-control-allow-credentials": "true",
+    "access-control-expose-headers": "x-datadog-trace-id,server",
+    "x-datadog-trace-id": "6370058199994907751",
+    "content-security-policy": "frame-ancestors 'self'",
+    "cache-control": "no-cache, no-store",
+    "pragma": "no-cache",
+    "expires": "0",
+    "x-ratelimit-limit": "100",
+    "x-ratelimit-remaining": "90",
+    "x-ratelimit-reset": "1751318548",
+    "X-Cache": "Miss from cloudfront",
+    "Via": "1.1 5343e28419a407f9ee6b620572471578.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Pop": "LIM50-P2",
+    "Alt-Svc": "h3=\":443\"; ma=86400",
+    "X-Amz-Cf-Id": "-2BGfOm6CuEfRht2wldyGelvT44gaPa0rS1nXVHQ4F0yGC4UqlN_Sw=="
+}
+2025-06-30 17:21:32,542 - src.api.groups.test_groups - DEBUG - RESPONSE: {
+    "id": "1d7f5b88-fff5-420b-8119-beb49663a322",
+    "team_id": "9013440493",
+    "userid": 43009368,
+    "name": "12121212",
+    "handle": "12121212",
+    "date_created": "1751318492383",
+    "metadata": null,
+    "description": "{\"ops\":[{\"insert\":\"\\n\",\"attributes\":{\"block-id\":\"block-32c31530-8349-40ba-86ac-00847e598a22\"}}]}",
+    "bookmarks": null,
+    "description_visibility": null,
+    "bookmarks_visibility": null,
+    "initials": "1",
+    "members": [],
+    "avatar": {
+        "attachment_id": null,
+        "color": null,
+        "source": null,
+        "icon": null
+    },
+    "locations": {
+        "categories": [],
+        "projects": [],
+        "subcategories": []
+    },
+    "description_size": "none"
+}
+2025-06-30 17:21:32,542 - src.api.groups.test_groups - DEBUG - STATUS CODE: 200
+2025-06-30 17:21:32,543 - helper.validate_response - DEBUG - Reading input data from file: src/api/input_json/create_group.json
+2025-06-30 17:21:32,545 - helper.validate_response - DEBUG - Content data: {'body': {'type': 'object', 'properties': {'id': {'type': 'string'}, 'team_id': {'type': 'string'}, 'userid': {'type': 'number'}, 'name': {'type': 'string'}, 'handle': {'type': 'string'}, 'date_created': {'type': 'string'}, 'metadata': {'type': 'null'}, 'description': {'type': 'string'}, 'bookmarks': {'type': 'null'}, 'description_visibility': {'type': 'null'}, 'bookmarks_visibility': {'type': 'null'}, 'initials': {'type': 'string'}, 'members': {'type': 'array', 'items': {}}, 'avatar': {'type': 'object', 'properties': {'attachment_id': {'type': 'null'}, 'color': {'type': 'null'}, 'source': {'type': 'null'}, 'icon': {'type': 'null'}}, 'required': ['attachment_id', 'color', 'source', 'icon']}, 'locations': {'type': 'object', 'properties': {'categories': {'type': 'array', 'items': {}}, 'projects': {'type': 'array', 'items': {}}, 'subcategories': {'type': 'array', 'items': {}}}, 'required': ['categories', 'projects', 'subcategories']}, 'description_size': {'type': 'string'}}, 'required': ['id', 'team_id', 'userid', 'name', 'handle', 'date_created', 'metadata', 'description', 'bookmarks', 'description_visibility', 'bookmarks_visibility', 'initials', 'members', 'avatar', 'locations', 'description_size']}, 'status_code': 200, 'headers': {'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '580', 'Connection': 'keep-alive', 'Date': 'Mon, 30 Jun 2025 18:03:27 GMT', 'x-received-from': 'shard-prod-us-east-2-1', 'Server': 'nginx', 'x-dns-prefetch-control': 'off', 'expect-ct': 'max-age=0', 'strict-transport-security': 'max-age=31536000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-permitted-cross-domain-policies': 'none', 'x-xss-protection': '0', 'vary': 'Origin', 'access-control-allow-credentials': 'true', 'access-control-expose-headers': 'x-datadog-trace-id,server', 'x-datadog-trace-id': '2875117304388402548', 'content-security-policy': "frame-ancestors 'self'", 'cache-control': 'no-cache, no-store', 'pragma': 'no-cache', 'expires': '0', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '97', 'x-ratelimit-reset': '1751306616', 'X-Cache': 'Miss from cloudfront', 'Via': '1.1 d57b2a5738f58b3120f0223cecca8c6c.cloudfront.net (CloudFront)', 'X-Amz-Cf-Pop': 'LIM50-P2', 'Alt-Svc': 'h3=":443"; ma=86400', 'X-Amz-Cf-Id': 'rsSrb_TdcEyMzZajFVlH5LyluHjbXdQ_ag3A4FlvXxWMLQbef7Yrtw=='}}
+2025-06-30 17:21:32,554 - helper.validate_response - DEBUG - JSON Schema Validation Successful
+2025-06-30 17:21:32,559 - src.api.conftest - INFO -  ==> FINISHED TEST: 'test_create_group_using_different_data[12121212]'

@@ -1,0 +1,44 @@
+2025-06-30 17:21:30,810 - src.api.conftest - DEBUG - RESPONSE: {'id': '216d4b41-8a37-414b-96ad-3448d9d867cd', 'team_id': '9013440493', 'userid': 43009368, 'name': 'New User Group name - from Test', 'handle': 'newusergroupname-fromtest', 'date_created': '1751318490635', 'metadata': None, 'description': '{"ops":[{"insert":"\\n","attributes":{"block-id":"block-4c35abbe-8500-4798-a877-2b6683e6558f"}}]}', 'bookmarks': None, 'description_visibility': None, 'bookmarks_visibility': None, 'initials': 'NT', 'members': [], 'avatar': {'attachment_id': None, 'color': None, 'source': None, 'icon': None}, 'locations': {'categories': [], 'projects': [], 'subcategories': []}, 'description_size': 'none'}
+2025-06-30 17:21:30,811 - src.api.conftest - INFO -  ==> STARTING TEST: 'test_delete_group'
+2025-06-30 17:21:30,813 - src.api.groups.test_groups - INFO - Deleting group with ID: %s
+2025-06-30 17:21:31,150 - helper.rest_client - DEBUG - Response Body: {}
+2025-06-30 17:21:31,151 - helper.rest_client - DEBUG - Response Status Code: 200
+2025-06-30 17:21:31,151 - helper.rest_client - DEBUG - ----------Response Headers: {
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "2",
+    "Connection": "keep-alive",
+    "Date": "Mon, 30 Jun 2025 21:21:31 GMT",
+    "x-received-from": "shard-prod-us-east-2-1",
+    "Server": "nginx",
+    "x-dns-prefetch-control": "off",
+    "expect-ct": "max-age=0",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "x-download-options": "noopen",
+    "x-content-type-options": "nosniff",
+    "x-permitted-cross-domain-policies": "none",
+    "x-xss-protection": "0",
+    "vary": "Origin",
+    "access-control-allow-credentials": "true",
+    "access-control-expose-headers": "x-datadog-trace-id,server",
+    "x-datadog-trace-id": "3520051285266179697",
+    "content-security-policy": "frame-ancestors 'self'",
+    "cache-control": "no-cache, no-store",
+    "pragma": "no-cache",
+    "expires": "0",
+    "x-ratelimit-limit": "100",
+    "x-ratelimit-remaining": "91",
+    "x-ratelimit-reset": "1751318548",
+    "X-Cache": "Miss from cloudfront",
+    "Via": "1.1 5343e28419a407f9ee6b620572471578.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Pop": "LIM50-P2",
+    "Alt-Svc": "h3=\":443\"; ma=86400",
+    "X-Amz-Cf-Id": "bjBJ5I1S72wvSmZiJzDhEjVKNO3p8PXQcSguWpCu_tuBV445snR9lA=="
+}
+2025-06-30 17:21:31,152 - src.api.groups.test_groups - DEBUG - RESPONSE: {}
+2025-06-30 17:21:31,152 - src.api.groups.test_groups - DEBUG - STATUS CODE: 200
+2025-06-30 17:21:31,153 - helper.validate_response - DEBUG - Reading input data from file: src/api/input_json/delete_group.json
+2025-06-30 17:21:31,154 - helper.validate_response - DEBUG - Content data: {'body': {}, 'status_code': 200, 'headers': {'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '580', 'Connection': 'keep-alive', 'Date': 'Mon, 30 Jun 2025 18:03:27 GMT', 'x-received-from': 'shard-prod-us-east-2-1', 'Server': 'nginx', 'x-dns-prefetch-control': 'off', 'expect-ct': 'max-age=0', 'strict-transport-security': 'max-age=31536000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-permitted-cross-domain-policies': 'none', 'x-xss-protection': '0', 'vary': 'Origin', 'access-control-allow-credentials': 'true', 'access-control-expose-headers': 'x-datadog-trace-id,server', 'x-datadog-trace-id': '2875117304388402548', 'content-security-policy': "frame-ancestors 'self'", 'cache-control': 'no-cache, no-store', 'pragma': 'no-cache', 'expires': '0', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '97', 'x-ratelimit-reset': '1751306616', 'X-Cache': 'Miss from cloudfront', 'Via': '1.1 d57b2a5738f58b3120f0223cecca8c6c.cloudfront.net (CloudFront)', 'X-Amz-Cf-Pop': 'LIM50-P2', 'Alt-Svc': 'h3=":443"; ma=86400', 'X-Amz-Cf-Id': 'rsSrb_TdcEyMzZajFVlH5LyluHjbXdQ_ag3A4FlvXxWMLQbef7Yrtw=='}}
+2025-06-30 17:21:31,155 - helper.validate_response - DEBUG - JSON Schema Validation Successful
+2025-06-30 17:21:31,158 - src.api.conftest - INFO -  ==> FINISHED TEST: 'test_delete_group'
+2025-06-30 17:21:31,161 - src.api.conftest - INFO - Deleting group with ID: %s
+2025-06-30 17:21:32,196 - src.api.conftest - DEBUG - STATUS CODE: 400

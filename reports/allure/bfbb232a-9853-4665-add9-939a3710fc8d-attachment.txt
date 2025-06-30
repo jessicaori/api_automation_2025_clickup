@@ -1,0 +1,42 @@
+2025-06-30 17:21:34,752 - src.api.conftest - INFO -  ==> STARTING TEST: 'test_delete_nonexistent_group'
+2025-06-30 17:21:34,752 - src.api.groups.test_groups - INFO - Deleting group with ID:
+2025-06-30 17:21:36,034 - helper.rest_client - DEBUG - Response Body: {'err': 'Internal Server Error', 'ECODE': 'GROUP_HELPERS_001'}
+2025-06-30 17:21:36,035 - helper.rest_client - DEBUG - Response Status Code: 500
+2025-06-30 17:21:36,035 - helper.rest_client - DEBUG - ----------Response Headers: {
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "59",
+    "Connection": "keep-alive",
+    "Date": "Mon, 30 Jun 2025 21:21:35 GMT",
+    "x-received-from": "shard-prod-us-east-2-1",
+    "Server": "nginx",
+    "x-dns-prefetch-control": "off",
+    "expect-ct": "max-age=0",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "x-download-options": "noopen",
+    "x-content-type-options": "nosniff",
+    "x-permitted-cross-domain-policies": "none",
+    "x-xss-protection": "0",
+    "vary": "Origin",
+    "access-control-allow-credentials": "true",
+    "access-control-expose-headers": "x-datadog-trace-id,server",
+    "x-datadog-trace-id": "6062981510803411231",
+    "content-security-policy": "frame-ancestors 'self'",
+    "cache-control": "no-cache, no-store",
+    "pragma": "no-cache",
+    "expires": "0",
+    "X-Cache": "Error from cloudfront",
+    "Via": "1.1 5343e28419a407f9ee6b620572471578.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Pop": "LIM50-P2",
+    "Alt-Svc": "h3=\":443\"; ma=86400",
+    "X-Amz-Cf-Id": "L6gr3vh--PmzvmGCoYnowi8Sobovo3y5Vin_jLKomSPOOlDymYH18w=="
+}
+2025-06-30 17:21:36,035 - helper.rest_client - ERROR - Request failed: 500 Server Error: Internal Server Error for url: https://api.clickup.com/api/v2/group/1245668
+2025-06-30 17:21:36,035 - src.api.groups.test_groups - DEBUG - RESPONSE: {
+    "err": "Internal Server Error",
+    "ECODE": "GROUP_HELPERS_001"
+}
+2025-06-30 17:21:36,036 - src.api.groups.test_groups - DEBUG - STATUS CODE: 500
+2025-06-30 17:21:36,036 - helper.validate_response - DEBUG - Reading input data from file: src/api/input_json/delete_non_existent_group.json
+2025-06-30 17:21:36,037 - helper.validate_response - DEBUG - Content data: {'body': {'type': 'object', 'properties': {'err': {'type': 'string'}, 'ECODE': {'type': 'string'}}, 'required': ['err', 'ECODE']}, 'status_code': 500, 'headers': {'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '580', 'Connection': 'keep-alive', 'Date': 'Mon, 30 Jun 2025 18:03:27 GMT', 'x-received-from': 'shard-prod-us-east-2-1', 'Server': 'nginx', 'x-dns-prefetch-control': 'off', 'expect-ct': 'max-age=0', 'strict-transport-security': 'max-age=31536000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-permitted-cross-domain-policies': 'none', 'x-xss-protection': '0', 'vary': 'Origin', 'access-control-allow-credentials': 'true', 'access-control-expose-headers': 'x-datadog-trace-id,server', 'x-datadog-trace-id': '2875117304388402548', 'content-security-policy': "frame-ancestors 'self'", 'cache-control': 'no-cache, no-store', 'pragma': 'no-cache', 'expires': '0', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '97', 'x-ratelimit-reset': '1751306616', 'X-Cache': 'Miss from cloudfront', 'Via': '1.1 d57b2a5738f58b3120f0223cecca8c6c.cloudfront.net (CloudFront)', 'X-Amz-Cf-Pop': 'LIM50-P2', 'Alt-Svc': 'h3=":443"; ma=86400', 'X-Amz-Cf-Id': 'rsSrb_TdcEyMzZajFVlH5LyluHjbXdQ_ag3A4FlvXxWMLQbef7Yrtw=='}}
+2025-06-30 17:21:36,040 - helper.validate_response - DEBUG - JSON Schema Validation Successful
+2025-06-30 17:21:36,057 - src.api.conftest - INFO -  ==> FINISHED TEST: 'test_delete_nonexistent_group'

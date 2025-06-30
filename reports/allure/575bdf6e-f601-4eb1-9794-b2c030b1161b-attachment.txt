@@ -1,0 +1,42 @@
+2025-06-30 17:21:32,572 - src.api.conftest - INFO -  ==> STARTING TEST: 'test_create_group_using_different_data[$%&]'
+2025-06-30 17:21:32,575 - src.api.groups.test_groups - INFO - Creating a group
+2025-06-30 17:21:32,877 - helper.rest_client - DEBUG - Response Body: {'err': 'Your plan is limited to 2 usages of Additional Teams, 2 usage.', 'ECODE': 'GROUP_027'}
+2025-06-30 17:21:32,878 - helper.rest_client - DEBUG - Response Status Code: 403
+2025-06-30 17:21:32,878 - helper.rest_client - DEBUG - ----------Response Headers: {
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "92",
+    "Connection": "keep-alive",
+    "Date": "Mon, 30 Jun 2025 21:21:32 GMT",
+    "x-received-from": "shard-prod-us-east-2-1",
+    "Server": "nginx",
+    "x-dns-prefetch-control": "off",
+    "expect-ct": "max-age=0",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "x-download-options": "noopen",
+    "x-content-type-options": "nosniff",
+    "x-permitted-cross-domain-policies": "none",
+    "x-xss-protection": "0",
+    "vary": "Origin",
+    "access-control-allow-credentials": "true",
+    "access-control-expose-headers": "x-datadog-trace-id,server",
+    "x-datadog-trace-id": "4348512313322608107",
+    "content-security-policy": "frame-ancestors 'self'",
+    "cache-control": "no-cache, no-store",
+    "pragma": "no-cache",
+    "expires": "0",
+    "x-ratelimit-limit": "100",
+    "x-ratelimit-remaining": "89",
+    "x-ratelimit-reset": "1751318548",
+    "X-Cache": "Error from cloudfront",
+    "Via": "1.1 5343e28419a407f9ee6b620572471578.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Pop": "LIM50-P2",
+    "Alt-Svc": "h3=\":443\"; ma=86400",
+    "X-Amz-Cf-Id": "5j8clgwTskDDUGvFJe0SfkYUGRp-w0Gl_HhF49FB3lhvgPy-mEclYA=="
+}
+2025-06-30 17:21:32,879 - helper.rest_client - ERROR - Request failed: 403 Client Error: Forbidden for url: https://api.clickup.com/api/v2//team/9013440493/group
+2025-06-30 17:21:32,879 - src.api.groups.test_groups - DEBUG - RESPONSE: {
+    "err": "Your plan is limited to 2 usages of Additional Teams, 2 usage.",
+    "ECODE": "GROUP_027"
+}
+2025-06-30 17:21:32,879 - src.api.groups.test_groups - DEBUG - STATUS CODE: 403
+2025-06-30 17:21:33,086 - src.api.conftest - INFO -  ==> FINISHED TEST: 'test_create_group_using_different_data[$%&]'

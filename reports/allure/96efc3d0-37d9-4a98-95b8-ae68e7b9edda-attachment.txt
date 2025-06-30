@@ -1,0 +1,45 @@
+2025-06-30 17:21:34,101 - src.api.conftest - INFO -  ==> STARTING TEST: 'test_get_all_groups_with_invalid_id'
+2025-06-30 17:21:34,103 - src.api.groups.test_groups - INFO - Getting group with ID: %s
+2025-06-30 17:21:34,735 - helper.rest_client - DEBUG - Response Body: {'err': 'Team not authorized', 'ECODE': 'OAUTH_061'}
+2025-06-30 17:21:34,737 - helper.rest_client - DEBUG - Response Status Code: 401
+2025-06-30 17:21:34,738 - helper.rest_client - DEBUG - ----------Response Headers: {
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": "49",
+    "Connection": "keep-alive",
+    "Date": "Mon, 30 Jun 2025 21:21:34 GMT",
+    "x-received-from": "shard-prod-us-east-2-1",
+    "Server": "nginx",
+    "x-dns-prefetch-control": "off",
+    "expect-ct": "max-age=0",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "x-download-options": "noopen",
+    "x-content-type-options": "nosniff",
+    "x-permitted-cross-domain-policies": "none",
+    "x-xss-protection": "0",
+    "vary": "Origin",
+    "access-control-allow-credentials": "true",
+    "access-control-expose-headers": "x-datadog-trace-id,server",
+    "x-datadog-trace-id": "2746799976081085873",
+    "content-security-policy": "frame-ancestors 'self'",
+    "cache-control": "no-cache, no-store",
+    "pragma": "no-cache",
+    "expires": "0",
+    "x-ratelimit-limit": "100",
+    "x-ratelimit-remaining": "85",
+    "x-ratelimit-reset": "1751318548",
+    "X-Cache": "Error from cloudfront",
+    "Via": "1.1 5343e28419a407f9ee6b620572471578.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Pop": "LIM50-P2",
+    "Alt-Svc": "h3=\":443\"; ma=86400",
+    "X-Amz-Cf-Id": "RUwYV_v6QSTTulJwckE_D9pCRya8e6vrBZhLL7PWiH7DcMKBiLzr5g=="
+}
+2025-06-30 17:21:34,738 - helper.rest_client - ERROR - Request failed: 401 Client Error: Unauthorized for url: https://api.clickup.com/api/v2//group?team_id=12456789
+2025-06-30 17:21:34,739 - src.api.groups.test_groups - DEBUG - RESPONSE: {
+    "err": "Team not authorized",
+    "ECODE": "OAUTH_061"
+}
+2025-06-30 17:21:34,739 - src.api.groups.test_groups - DEBUG - STATUS CODE: 401
+2025-06-30 17:21:34,740 - helper.validate_response - DEBUG - Reading input data from file: src/api/input_json/get_all_groups_invalid_team_id.json
+2025-06-30 17:21:34,740 - helper.validate_response - DEBUG - Content data: {'body': {}, 'status_code': 401, 'headers': {'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '580', 'Connection': 'keep-alive', 'Date': 'Mon, 30 Jun 2025 18:03:27 GMT', 'x-received-from': 'shard-prod-us-east-2-1', 'Server': 'nginx', 'x-dns-prefetch-control': 'off', 'expect-ct': 'max-age=0', 'strict-transport-security': 'max-age=31536000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-permitted-cross-domain-policies': 'none', 'x-xss-protection': '0', 'vary': 'Origin', 'access-control-allow-credentials': 'true', 'access-control-expose-headers': 'x-datadog-trace-id,server', 'x-datadog-trace-id': '2875117304388402548', 'content-security-policy': "frame-ancestors 'self'", 'cache-control': 'no-cache, no-store', 'pragma': 'no-cache', 'expires': '0', 'x-ratelimit-limit': '100', 'x-ratelimit-remaining': '97', 'x-ratelimit-reset': '1751306616', 'X-Cache': 'Miss from cloudfront', 'Via': '1.1 d57b2a5738f58b3120f0223cecca8c6c.cloudfront.net (CloudFront)', 'X-Amz-Cf-Pop': 'LIM50-P2', 'Alt-Svc': 'h3=":443"; ma=86400', 'X-Amz-Cf-Id': 'rsSrb_TdcEyMzZajFVlH5LyluHjbXdQ_ag3A4FlvXxWMLQbef7Yrtw=='}}
+2025-06-30 17:21:34,742 - helper.validate_response - DEBUG - JSON Schema Validation Successful
+2025-06-30 17:21:34,743 - src.api.conftest - INFO -  ==> FINISHED TEST: 'test_get_all_groups_with_invalid_id'
