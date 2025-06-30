@@ -1,0 +1,34 @@
+2025-06-30 16:20:14,297 - src.api.conftest - DEBUG - RESPONSE: {'id': '8a9d88eb-deb4-40b2-9d7d-e00a1ccc81eb', 'team_id': '9013440493', 'userid': 43009368, 'name': 'New User Group name - from Test', 'handle': 'newusergroupname-fromtest', 'date_created': '1751314814118', 'metadata': None, 'description': '{"ops":[{"insert":"\\n","attributes":{"block-id":"block-d0e4d5fd-f1b9-4fa6-8566-6cafd2fdbd25"}}]}', 'bookmarks': None, 'description_visibility': None, 'bookmarks_visibility': None, 'initials': 'NT', 'members': [], 'avatar': {'attachment_id': None, 'color': None, 'source': None, 'icon': None}, 'locations': {'categories': [], 'projects': [], 'subcategories': []}, 'description_size': 'none'}
+2025-06-30 16:20:14,299 - src.api.conftest - INFO -  ==> STARTING TEST: 'test_update_group'
+2025-06-30 16:20:14,301 - src.api.groups.test_groups - INFO - Updating group with ID with data
+2025-06-30 16:20:14,657 - src.api.groups.test_groups - DEBUG - RESPONSE: {
+    "id": "8a9d88eb-deb4-40b2-9d7d-e00a1ccc81eb",
+    "team_id": "9013440493",
+    "userid": 43009368,
+    "name": "Updated Group Name",
+    "handle": "newusergroupname-fromtest",
+    "date_created": "1751314814118",
+    "metadata": null,
+    "description": "{\"ops\":[{\"insert\":\"\\n\",\"attributes\":{\"block-id\":\"block-d0e4d5fd-f1b9-4fa6-8566-6cafd2fdbd25\"}}]}",
+    "bookmarks": null,
+    "description_visibility": null,
+    "bookmarks_visibility": null,
+    "initials": "UN",
+    "members": [],
+    "avatar": {
+        "attachment_id": null,
+        "color": null,
+        "source": null,
+        "icon": null
+    },
+    "locations": {
+        "categories": [],
+        "projects": [],
+        "subcategories": []
+    },
+    "description_size": "none"
+}
+2025-06-30 16:20:14,659 - src.api.groups.test_groups - DEBUG - STATUS CODE: 200
+2025-06-30 16:20:14,660 - src.api.conftest - INFO -  ==> FINISHED TEST: 'test_update_group'
+2025-06-30 16:20:14,661 - src.api.conftest - INFO - Deleting group with ID: %s
+2025-06-30 16:20:15,401 - src.api.conftest - DEBUG - STATUS CODE: 200

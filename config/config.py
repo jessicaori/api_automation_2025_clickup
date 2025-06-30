@@ -6,6 +6,7 @@ load_dotenv()
 secret_key = os.getenv('API_KEY')
 base_url = os.getenv('BASE_URL')
 team_id = os.getenv('TEAM_ID')
+web_hook = os.getenv('WEB_HOOK')
 headers = {
     "Authorization": f"{secret_key}",
     "accept": "application/json",

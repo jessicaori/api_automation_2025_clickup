@@ -1,0 +1,33 @@
+2025-06-30 15:42:41,750 - src.api.conftest - DEBUG - RESPONSE: {'id': '01727c49-0af1-498a-a7cc-1dce56d07009', 'team_id': '9013440493', 'userid': 43009368, 'name': 'New User Group name - from Test', 'handle': 'newusergroupname-fromtest', 'date_created': '1751312561573', 'metadata': None, 'description': '{"ops":[{"insert":"\\n","attributes":{"block-id":"block-e4f30c2e-84c3-49c2-b3cb-e437315d355e"}}]}', 'bookmarks': None, 'description_visibility': None, 'bookmarks_visibility': None, 'initials': 'NT', 'members': [], 'avatar': {'attachment_id': None, 'color': None, 'source': None, 'icon': None}, 'locations': {'categories': [], 'projects': [], 'subcategories': []}, 'description_size': 'none'}
+2025-06-30 15:42:41,752 - src.api.conftest - INFO -  ==> STARTING TEST: 'test_get_group'
+2025-06-30 15:42:41,755 - src.api.groups.test_groups - INFO - Getting group with ID: %s
+2025-06-30 15:42:42,402 - src.api.groups.test_groups - DEBUG - RESPONSE: {
+    "groups": [
+        {
+            "id": "01727c49-0af1-498a-a7cc-1dce56d07009",
+            "team_id": "9013440493",
+            "userid": 43009368,
+            "name": "New User Group name - from Test",
+            "handle": "newusergroupname-fromtest",
+            "date_created": "1751312561573",
+            "metadata": null,
+            "description": "{\"ops\":[{\"insert\":\"\\n\",\"attributes\":{\"block-id\":\"block-e4f30c2e-84c3-49c2-b3cb-e437315d355e\"}}]}",
+            "bookmarks": null,
+            "description_visibility": null,
+            "bookmarks_visibility": null,
+            "initials": "NT",
+            "members": [],
+            "avatar": {
+                "attachment_id": null,
+                "color": null,
+                "source": null,
+                "icon": null
+            },
+            "description_size": "none"
+        }
+    ]
+}
+2025-06-30 15:42:42,402 - src.api.groups.test_groups - DEBUG - STATUS CODE: 200
+2025-06-30 15:42:42,403 - src.api.conftest - INFO -  ==> FINISHED TEST: 'test_get_group'
+2025-06-30 15:42:42,403 - src.api.conftest - INFO - Deleting group with ID: %s
+2025-06-30 15:42:42,919 - src.api.conftest - DEBUG - STATUS CODE: 200

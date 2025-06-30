@@ -32,5 +32,5 @@ def delete_group(group_id):
     """Fixture to delete a group."""
     LOGGER.info("Deleting group with ID: %s")
     response = requests.delete(url=f"{base_url}/group/{group_id}", headers=headers)
-    LOGGER.debug("RESPONSE: %s", json.dumps(response.json(), indent=4))
+    # LOGGER.debug("RESPONSE: %s", json.dumps(response.json(), indent=4))
     LOGGER.debug("STATUS CODE: %s", response.status_code)

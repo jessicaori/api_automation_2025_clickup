@@ -1,0 +1,10 @@
+2025-06-30 15:42:44,658 - src.api.conftest - DEBUG - RESPONSE: {'id': '811819a0-9106-4648-a463-ea60f786986f', 'team_id': '9013440493', 'userid': 43009368, 'name': 'New User Group name - from Test', 'handle': 'newusergroupname-fromtest', 'date_created': '1751312564503', 'metadata': None, 'description': '{"ops":[{"insert":"\\n","attributes":{"block-id":"block-e2ff266b-cd90-4fde-b6d2-ef75c04b7c06"}}]}', 'bookmarks': None, 'description_visibility': None, 'bookmarks_visibility': None, 'initials': 'NT', 'members': [], 'avatar': {'attachment_id': None, 'color': None, 'source': None, 'icon': None}, 'locations': {'categories': [], 'projects': [], 'subcategories': []}, 'description_size': 'none'}
+2025-06-30 15:42:44,662 - src.api.conftest - INFO -  ==> STARTING TEST: 'test_delete_group'
+2025-06-30 15:42:44,665 - src.api.groups.test_groups - INFO - Deleting group with ID: %s
+2025-06-30 15:42:45,200 - src.api.groups.test_groups - DEBUG - RESPONSE: {}
+2025-06-30 15:42:45,200 - src.api.groups.test_groups - DEBUG - STATUS CODE: 200
+2025-06-30 15:42:45,203 - src.api.conftest - INFO -  ==> FINISHED TEST: 'test_delete_group'
+2025-06-30 15:42:45,206 - src.api.conftest - INFO - Deleting group with ID: %s
+2025-06-30 15:42:46,225 - src.api.conftest - DEBUG - STATUS CODE: 400
+2025-06-30 15:42:46,230 - src.api.groups.test_groups - INFO - Test Project Teardown Class
+2025-06-30 15:42:46,661 - src.api.groups.test_groups - DEBUG - Group deleted

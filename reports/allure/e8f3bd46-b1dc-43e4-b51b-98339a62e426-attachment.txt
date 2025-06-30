@@ -1,0 +1,7 @@
+2025-06-30 16:20:18,190 - src.api.conftest - INFO -  ==> STARTING TEST: 'test_create_group_using_different_data[<b>Hola</b>]'
+2025-06-30 16:20:18,191 - src.api.groups.test_groups - INFO - Creating a group
+2025-06-30 16:20:18,543 - helper.rest_client - ERROR - Request failed: 403 Client Error: Forbidden for url: https://api.clickup.com/api/v2//team/9013440493/group
+2025-06-30 16:20:18,558 - src.api.conftest - INFO -  ==> FINISHED TEST: 'test_create_group_using_different_data[<b>Hola</b>]'
+2025-06-30 16:20:18,561 - src.api.groups.test_groups - INFO - Test Project Teardown Class
+2025-06-30 16:20:18,912 - src.api.groups.test_groups - DEBUG - Group deleted
+2025-06-30 16:20:19,560 - src.api.groups.test_groups - DEBUG - Group deleted
