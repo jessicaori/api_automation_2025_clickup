@@ -101,9 +101,9 @@
     "status_code": 200,
     "headers": {
         "Content-Type": "application/json; charset=utf-8",
-        "Content-Length": "13",
+        "Content-Length": "59",
         "Connection": "keep-alive",
-        "Date": "Mon, 30 Jun 2025 20:55:34 GMT",
+        "Date": "Mon, 30 Jun 2025 21:18:22 GMT",
         "x-received-from": "shard-prod-us-east-2-1",
         "Server": "nginx",
         "x-dns-prefetch-control": "off",
@@ -116,18 +116,15 @@
         "vary": "Origin",
         "access-control-allow-credentials": "true",
         "access-control-expose-headers": "x-datadog-trace-id,server",
-        "x-datadog-trace-id": "8315564435088384068",
+        "x-datadog-trace-id": "1039035264496367493",
         "content-security-policy": "frame-ancestors 'self'",
         "cache-control": "no-cache, no-store",
         "pragma": "no-cache",
         "expires": "0",
-        "x-ratelimit-limit": "100",
-        "x-ratelimit-remaining": "99",
-        "x-ratelimit-reset": "1751316995",
-        "X-Cache": "Miss from cloudfront",
-        "Via": "1.1 3ada05fad048eee420193600539b1d16.cloudfront.net (CloudFront)",
+        "X-Cache": "Error from cloudfront",
+        "Via": "1.1 26e40a330b4c3cc9642637f33b3feec4.cloudfront.net (CloudFront)",
         "X-Amz-Cf-Pop": "LIM50-P2",
         "Alt-Svc": "h3=\":443\"; ma=86400",
-        "X-Amz-Cf-Id": "HDeuUTinUXqz_g2JIj05nArwzQWUS2khc5wSxtPXapkdLn_G9Nj2Tg=="
+        "X-Amz-Cf-Id": "qxlqbNOVqwbl_BtnhG0yCjXipgmr6VEPrxobGmYMB5af8sFYujTOcg=="
     }
 }

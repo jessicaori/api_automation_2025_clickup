@@ -1,4 +1,5 @@
 import requests
+import json
 from utils.logger import Logger
 
 LOGGER = Logger(__name__)
@@ -35,6 +36,7 @@ class RestClient:
             response_updated['status_code'] = response.status_code
             LOGGER.debug("Response Status Code: %s", response_updated['status_code'])
             response_updated['headers'] = dict(response.headers)
+            LOGGER.debug("----------Response Headers: %s", json.dumps(response_updated['headers'], indent=4))
             response.raise_for_status()  # Raise an error for bad responses (4xx, 5xx)
         except requests.exceptions.HTTPError as e:
             LOGGER.error(f"Request failed: %s", e)
