@@ -240,7 +240,7 @@ class TestGroups:
     @allure.label("owner", "jessica.orihuela")
     def test_delete_nonexistent_group(self, log_test_name):
         """
-        Method to delete a group by ID.
+        Method to delete a non-existent group.
         
         Args:
             log_test_name (Fixture): Logs the name of the test being executed.
@@ -256,6 +256,68 @@ class TestGroups:
         LOGGER.debug("STATUS CODE: %s", response["status_code"])
         # Assertion
         self.validate_response.validate_response(response, "delete_non_existent_group")
+
+    @pytest.mark.acceptance
+    @allure.title("Test End-to-End CRUD Group")
+    @allure.tag('end-to-end')
+    @allure.label("owner", "jessica.orihuela")
+    def test_crud_group(self, log_test_name):
+        """
+        Method tp perform end-to-end CRUD operations on a group.
+        
+        Args:
+            log_test_name (Fixture): Logs the name of the test being executed.
+        """
+        LOGGER.info("Creating group with ID:")
+        # Call Endpoint
+        # Body
+        body = {
+            "name": f"New User Group - {self.faker.company()}"
+        }
+        # Call Endpoint
+        response = self.rest_client.send_request(
+            method='POST',
+            url=f"{base_url}/team/{team_id}/group",
+            headers=headers,
+            data=body
+        )
+        LOGGER.debug("RESPONSE: %s", json.dumps(response["body"], indent=4))
+        LOGGER.debug("STATUS CODE: %s", response["status_code"])
+        group_id = response["body"].get('id')
+
+        LOGGER.info("Getting group with ID: %s")
+        # Call Endpoint
+        response = self.rest_client.send_request(
+            method='GET',
+            url=f"{base_url}/group?team_id={team_id}&group_ids={group_id}",
+            headers=headers
+        )
+        LOGGER.debug("RESPONSE: %s", json.dumps(response["body"], indent=4))
+        LOGGER.debug("STATUS CODE: %s", response["status_code"])
+        
+        LOGGER.info("Updating group with ID with data")
+        # Call Endpoint
+        response = self.rest_client.send_request(
+            method='PUT',
+            url=f"{base_url}/group/{group_id}",
+            headers=headers,
+            data={"name":"Updated Group Name"}
+        )
+        LOGGER.debug("RESPONSE: %s", json.dumps(response["body"], indent=4))
+        LOGGER.debug("STATUS CODE: %s", response["status_code"])
+
+        LOGGER.info("Deleting group with ID: %s")
+        # Call Endpoint
+        response = self.rest_client.send_request(
+            method='DELETE',
+            url=f"{base_url}/group/{group_id}",
+            headers=headers
+        )
+        LOGGER.debug("RESPONSE: %s", json.dumps(response["body"], indent=4))
+        LOGGER.debug("STATUS CODE: %s", response["status_code"])
+        # Assertion
+        self.validate_response.validate_response(response, "delete_group")
+
 
     @classmethod
     def teardown_class(cls):

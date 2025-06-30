@@ -30,13 +30,12 @@ class RestClient:
 
         try:
             response = methods[method](url=url, headers=headers, params=params, json=data)
-            LOGGER.debug(f"-------Response Body: {response}")
             response_updated['body'] = response.json() if response.text else { "message": "No content" }
+            LOGGER.debug("Response Body: %s", response_updated['body'])
             response_updated['status_code'] = response.status_code
+            LOGGER.debug("Response Status Code: %s", response_updated['status_code'])
             response_updated['headers'] = dict(response.headers)
             response.raise_for_status()  # Raise an error for bad responses (4xx, 5xx)
-            LOGGER.debug('---------------')
-            LOGGER.debug(f"Response Body: {response_updated}")
         except requests.exceptions.HTTPError as e:
             LOGGER.error(f"Request failed: %s", e)
         except requests.exceptions.ConnectionError as e:
