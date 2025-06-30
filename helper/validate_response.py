@@ -19,8 +19,8 @@ class ValidateResponse:
         if key_compare == 'status_code':
             assert actual_value == expected_value, f"Expected status code {expected_value}, but got {actual_value}"
         elif key_compare == 'headers':
-            LOGGER.debug(f"Expected headers: {json.dumps(expected_value, indent=4)}")
-            LOGGER.debug(f"Actual headers: {json.dumps(actual_value, indent=4)}")
+            # LOGGER.debug(f"Expected headers: {json.dumps(expected_value, indent=4)}")
+            # LOGGER.debug(f"Actual headers: {json.dumps(actual_value, indent=4)}")
             assert expected_value.keys() <= actual_value.keys(), f"Expected headers {expected_value}, but got {actual_value}"
         elif key_compare == 'body':
             schema = False

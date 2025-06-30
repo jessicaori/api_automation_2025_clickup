@@ -159,6 +159,30 @@ class TestGroups:
         self.validate_response.validate_response(response, "create_group")
     
     @pytest.mark.functional
+    @allure.title("Test Get All Groups")
+    @allure.tag('functional')
+    @allure.label("owner", "jessica.orihuela")
+    def test_get_all_groups(self, log_test_name):
+        """
+        Method to get all groups for a team.
+        
+        Args:
+            create_group (Fixture): Creates a group and returns its ID.
+            log_test_name (Fixture): Logs the name of the test being executed.
+        """
+        LOGGER.info("Getting group with ID: %s")
+        # Call Endpoint
+        response = self.rest_client.send_request(
+            method='GET',
+            url=f"{base_url}/group?team_id={team_id}",
+            headers=headers
+        )
+        LOGGER.debug("RESPONSE: %s", json.dumps(response["body"], indent=4))
+        LOGGER.debug("STATUS CODE: %s", response["status_code"])
+        # Assertion
+        self.validate_response.validate_response(response, "get_all_groups")
+
+    @pytest.mark.functional
     @allure.title("Test Create a Group without body")
     @allure.tag('functional', 'negative')
     @allure.label("owner", "jessica.orihuela")
@@ -182,11 +206,56 @@ class TestGroups:
         )
         LOGGER.debug("RESPONSE: %s", json.dumps(response["body"], indent=4))
         LOGGER.debug("STATUS CODE: %s", response["status_code"])
-        self.group_list.append(response["body"]["id"])
         
         # Assertion
-        self.validate_response.validate_response(response, "create_group")
+        self.validate_response.validate_response(response, "create_group_without_body_id")
 
+    @pytest.mark.functional
+    @allure.title("Test Get All Groups with invalid team_id")
+    @allure.tag('functional')
+    @allure.label("owner", "jessica.orihuela")
+    def test_get_all_groups_with_invalid_id(self, log_test_name):
+        """
+        Method to get all groups for a team.
+        
+        Args:
+            create_group (Fixture): Creates a group and returns its ID.
+            log_test_name (Fixture): Logs the name of the test being executed.
+        """
+        LOGGER.info("Getting group with ID: %s")
+        # Call Endpoint
+        response = self.rest_client.send_request(
+            method='GET',
+            url=f"{base_url}/group?team_id=12456789",  # Invalid team_id
+            headers=headers
+        )
+        LOGGER.debug("RESPONSE: %s", json.dumps(response["body"], indent=4))
+        LOGGER.debug("STATUS CODE: %s", response["status_code"])
+        # Assertion
+        self.validate_response.validate_response(response, "get_all_groups_invalid_team_id")
+
+    @pytest.mark.acceptance
+    @allure.title("Test Delete non existent Group")
+    @allure.tag('functional', 'negative')
+    @allure.label("owner", "jessica.orihuela")
+    def test_delete_nonexistent_group(self, log_test_name):
+        """
+        Method to delete a group by ID.
+        
+        Args:
+            log_test_name (Fixture): Logs the name of the test being executed.
+        """
+        LOGGER.info("Deleting group with ID:")
+        # Call Endpoint
+        response = self.rest_client.send_request(
+            method='DELETE',
+            url=f"{base_url}group/1245668",
+            headers=headers
+        )
+        LOGGER.debug("RESPONSE: %s", json.dumps(response["body"], indent=4))
+        LOGGER.debug("STATUS CODE: %s", response["status_code"])
+        # Assertion
+        self.validate_response.validate_response(response, "delete_non_existent_group")
 
     @classmethod
     def teardown_class(cls):
