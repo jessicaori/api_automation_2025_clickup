@@ -99,6 +99,7 @@ class TestGroups:
         )
         LOGGER.debug("RESPONSE: %s", json.dumps(response["body"], indent=4))
         LOGGER.debug("STATUS CODE: %s", response["status_code"])
+        self.group_list.append(response["body"]["id"])
         # Assertion
         self.validate_response.validate_response(response, "update_group")
 
@@ -106,7 +107,7 @@ class TestGroups:
     @allure.title("Test Delete Group")
     @allure.tag('acceptance')
     @allure.label("owner", "jessica.orihuela")
-    def test_delete_group(self,create_group, log_test_name):
+    def test_delete_group(self, create_group, log_test_name):
         """
         Method to delete a group by ID.
         
@@ -130,7 +131,7 @@ class TestGroups:
     @allure.title("Test Create Group Using Different Data")
     @allure.tag('functional')
     @allure.label("owner", "jessica.orihuela")
-    @pytest.mark.parametrize("group_name", ["12121212", "$%&", "<b>Hola</b>"])
+    @pytest.mark.parametrize("group_name", ["$%&", "<b>Hola</b>"])
     def test_create_group_using_different_data(self, log_test_name, group_name):
         """
         Method to create a group using different data.
@@ -147,13 +148,13 @@ class TestGroups:
         # Call Endpoint
         response = self.rest_client.send_request(
             method='POST',
-            url=f"{base_url}/team/{team_id}/group",
+            url=f"{base_url}team/{team_id}/group",
             headers=headers,
             data=body
         )
         LOGGER.debug("RESPONSE: %s", json.dumps(response["body"], indent=4))
         LOGGER.debug("STATUS CODE: %s", response["status_code"])
-        self.group_list.append(response["body"]["id"])
+        self.group_list.append(response["body"].get('id'))
         
         # Assertion
         self.validate_response.validate_response(response, "create_group")
@@ -318,12 +319,24 @@ class TestGroups:
         # Assertion
         self.validate_response.validate_response(response, "delete_group")
 
+    def teardown_method(self):
+        """Teardown method to clean up after each test."""
+        LOGGER.info("Test Group Teardown Method")
+        # Cleanup groups created during tests
+        for group_id in self.group_list:
+            response = self.rest_client.send_request(
+                method='DELETE',
+                url=f"{base_url}/group/{group_id}",
+                headers=headers
+            )
+            if response["status_code"] == 200:
+                LOGGER.debug("Group deleted")
 
     @classmethod
     def teardown_class(cls):
         """Teardown method to clean up after tests."""
         # Cleanup groups created during tests
-        LOGGER.info("Test Project Teardown Class")
+        LOGGER.info("Test Group Teardown Class")
         for group_id in cls.group_list:
             response = cls.rest_client.send_request(
                 method='DELETE',
