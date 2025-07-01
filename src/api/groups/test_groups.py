@@ -99,7 +99,7 @@ class TestGroups:
         )
         LOGGER.debug("RESPONSE: %s", json.dumps(response["body"], indent=4))
         LOGGER.debug("STATUS CODE: %s", response["status_code"])
-        self.group_list.append(response["body"]["id"])
+        self.group_list.append(response["body"].get('id'))
         # Assertion
         self.validate_response.validate_response(response, "update_group")
 
@@ -318,6 +318,40 @@ class TestGroups:
         LOGGER.debug("STATUS CODE: %s", response["status_code"])
         # Assertion
         self.validate_response.validate_response(response, "delete_group")
+    
+    @pytest.mark.functional
+    @allure.title("Test Create Group with non existent member")
+    @allure.tag('functional', 'negative')
+    @allure.label("owner", "jessica.orihuela")
+    def test_create_group_with_non_existent_members(self, log_test_name):
+        """
+        Method to create a group.
+        
+        Args:
+            log_test_name (Fixture): Logs the name of the test being executed.
+        """
+        LOGGER.info("Creating a group")
+        # Body
+        body = {
+            "name": f"New User Group - {self.faker.company()}",
+            "members": [
+                self.faker.random_int(min=1000, max=9999),  # Non-existent member ID
+                self.faker.random_int(min=1000, max=9999)   # Non-existent member ID
+            ]
+        }
+        # Call Endpoint
+        response = self.rest_client.send_request(
+            method='POST',
+            url=f"{base_url}/team/{team_id}/group",
+            headers=headers,
+            data=body
+        )
+        LOGGER.debug("RESPONSE: %s", json.dumps(response["body"], indent=4))
+        LOGGER.debug("STATUS CODE: %s", response["status_code"])
+        self.group_list.append(response["body"].get('id'))
+        
+        # Assertion
+        self.validate_response.validate_response(response, "create_group_with_non_existent_members")
 
     def teardown_method(self):
         """Teardown method to clean up after each test."""
@@ -332,17 +366,17 @@ class TestGroups:
             if response["status_code"] == 200:
                 LOGGER.debug("Group deleted")
 
-    @classmethod
-    def teardown_class(cls):
-        """Teardown method to clean up after tests."""
-        # Cleanup groups created during tests
-        LOGGER.info("Test Group Teardown Class")
-        for group_id in cls.group_list:
-            response = cls.rest_client.send_request(
-                method='DELETE',
-                url=f"{base_url}/group/{group_id}",
-                headers=headers
-            )
-            # response = requests.delete(url=f"{base_url}/group/{group_id}", headers=headers)
-            if response["status_code"] == 200:
-                LOGGER.debug("Group deleted")
+    # @classmethod
+    # def teardown_class(cls):
+    #     """Teardown method to clean up after tests."""
+    #     # Cleanup groups created during tests
+    #     LOGGER.info("Test Group Teardown Class")
+    #     for group_id in cls.group_list:
+    #         response = cls.rest_client.send_request(
+    #             method='DELETE',
+    #             url=f"{base_url}/group/{group_id}",
+    #             headers=headers
+    #         )
+    #         # response = requests.delete(url=f"{base_url}/group/{group_id}", headers=headers)
+    #         if response["status_code"] == 200:
+    #             LOGGER.debug("Group deleted")

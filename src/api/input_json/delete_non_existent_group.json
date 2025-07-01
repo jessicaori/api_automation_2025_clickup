@@ -1,19 +1,19 @@
 {
     "body": {
-  "type": "object",
-  "properties": {
-    "err": {
-      "type": "string"
+      "type": "object",
+      "properties": {
+        "err": {
+          "type": "string"
+        },
+        "ECODE": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "err",
+        "ECODE"
+      ]
     },
-    "ECODE": {
-      "type": "string"
-    }
-  },
-  "required": [
-    "err",
-    "ECODE"
-  ]
-},
     "status_code": 500,
     "headers": {
         "Content-Type": "application/json; charset=utf-8",
